@@ -64,9 +64,9 @@ view? Have a look:
                 return HttpResponseRedirect('/success/')
         else:
             form = PostForm()
-        return render_to_response('post_form.html', {
+        return render(request, 'post_form.html', {
             'form',
-        }, context_instance=RequestContext(request))
+        })
 
 
 No, we don't do anything different as we would do without having the

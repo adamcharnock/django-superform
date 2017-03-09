@@ -47,9 +47,9 @@ Here is an example on how you can use this module::
                 return HttpResponseRedirect(obj.get_absolute_url())
         else:
             form = PostForm()
-        return render_to_response('post_form.html', {
+        return render(request, 'post_form.html', {
             'form',
-        }, context_instance=RequestContext(request))
+        })
 
 And yes, thanks for asking, the ``form.is_valid()`` and ``form.save()`` calls
 transparantly propagate to the defined comments formset and call their
